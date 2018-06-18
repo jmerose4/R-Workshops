@@ -2,3 +2,25 @@ Practice Exercises for Workshop 1
 Feel free to copy the code / answer below the question if that's helpful to you
 Or feel free to just these exercises to guide your exploration (no one is grading you!)
 
+1) You want to simulate the outcome of 50 random coin tosses. How could you do this in R?
+
+2) You want to compare your data to normally distirbtued data with mean = 0 and sd = 1. 
+How would you sample 100 values from a normal distribution of mean 0 and sd 1?
+Hint: Use the rnorm function. Use ?rnorm for help on how to use it!
+
+3) Download and import the "Anopheles_Counts.csv" data set. Save it as a variable in R called "Anopheles"
+This dataset contains information about the number of Anopheles quadrimaculatus (the malaria vector in eastern US) at various sites in Florida
+The "value" column indicates how many mosuqitoes were found in the trap at that day/location.
+
+3.1) What is the average number of mosquitoes found at all traps/locations?
+
+3.2) What is the max number of mosquitoes found? 
+
+CHALLENGE: At which location did this max value of mosquitoes occur?
+  Hint: look-up the 'which' function
+
+3.2) Create a new variable called Locations and set it equal to the 5th column (sample_location_info)
+
+3.2.1) How many unique locations were sampled?
+
+
