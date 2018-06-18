@@ -1,0 +1,9 @@
+NumSuccess	TotalTries	SizePirate	AgePirate	SizeVictim
+17	24	Large	Adult	Large
+29	29	Large	Adult	Small
+17	27	Large	Immature	Large
+20	20	Large	Immature	Small
+1	12	Small	Adult	Large
+15	16	Small	Adult	Small
+0	28	Small	Immature	Large
+1	4	Small	Immature	Small
