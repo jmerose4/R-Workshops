@@ -1,0 +1,19 @@
+Knight and Skagen collected during a field study on the foraging behaviour of wintering Bald Eagles in Washington State, USA data concerning 160 attempts by one (pirating) Bald Eagle to steal a chum salmon from another (feeding) Bald Eagle.
+
+
+The eagles data frame has 8 rows and 5 columns.
+
+NumSuccess
+Number of successful attempts.
+
+TotalTries
+Total number of attempts.
+
+SizePirate
+Size of pirating eagle (L = large, S = small).
+
+AgePirate
+Age of pirating eagle (I = immature, A = adult).
+
+SizeVictim
+Size of victim eagle (L = large, S = small).
