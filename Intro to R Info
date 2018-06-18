@@ -12,7 +12,6 @@ In today's workshop, we will cover:
 5) How to access subsets of data
 
 
-
 1) R Studio Layout: 
   Console: everything you type here gets executed (or run) 
   Script window: VERY IMPORTANT. USE THIS AND THIS ONLY THIS TO BUILD CODE
@@ -24,5 +23,61 @@ In today's workshop, we will cover:
    How you communicate to R what you are trying to make it do
    Base R has many many functions already! Examples: mean, subset, plot
    Use functions by typing the name of the function and adding arguments within the parantheses
+   
+   Exs: 
+   sqrt(101)
+   sample(1:10, 3)
+   
+ 
+3) Installing packages
+    If you want to do calculations/analysis not available through the functions in base R 
+    Can be done 1 of 2 ways:
+    
+    3.1) manual (command-line) install.
+      Uses the "install.packages" function
+        Ex: install.packages("vegan")
+    
+    3.2) using R-studio tools. 
+      Go to 'packages' tab --> install
+      
+    Both methods require that you "load" the package after installing it and before actually using it.
+    Again you can do this 1 of 2 ways:
+    
+    3.3) manual (command-line) load.
+      Uses the "library" function
+        Ex: library(vegan) 
+        
+    3.4) Using R-studio tools.
+      In packages tab, make sure the checkbox is clicked beside the package you want to use
+      
+  
+ 4) Importing data
+    Now you want to use all the snazzy new functions you have available to you on some actual data. 
+    You can get your data into R either by manually entering it (only do those for very small datasets) or importing the data files
+    
+    4.1) Manually entering data
+       Create a new variable and set your data equal to this variable.
+       Use the "c()" function to tell R you are passing it a list of data points rather than a single data point
+        Ex: leafsize = c(4.3,6.8,7.0, 11.9, 3.1, 20.0)
+       You can also create categorial or character data. 
+       This requires putting quotation marks around the data points so R doesn't think it's just another variable
+        Ex: names = c("A", "A", "B", "B", "C", "C")
+        
+     4.2) Importing data
+        Recommended method for any dataset larger than a couple rows/columns
+        There are a few different ways to import data:
+        
+          4.2.1) Manual (command-line) import
+            Uses the "read" functions in R. including "read.csv", and "read.table"
+            Which one you use depends on the format your data is in
+            I recommend using read.csv, but you do you!
+            In this command you should also specificy if the data you're importing has column names or not
+              Ex: read.csv("~/Downloads/SmallMammals.csv", header = TRUE)
+              
+              
+        
+        
+        
+ 
    
    
