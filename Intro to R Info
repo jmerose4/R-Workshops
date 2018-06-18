@@ -73,7 +73,7 @@ In today's workshop, we will cover:
             You should also assign the data to a new variable name. 
               Do this by making up a name (should be something informative) and using either "=" or "<-" to assign data to that newly created variable
             
-              Ex: Mammals = read.csv("~/Downloads/SmallMammals.csv", header = TRUE, row.names = 1)
+              Ex: Animals = read.csv("~/Downloads/CA_Animals.csv", header = TRUE, row.names = 1)
               Ex: Eagles = read.table("~/Downloads/EagleForagingEcology.txt", header = TRUE)
               
            4.2.2) Using R-studio tools
@@ -93,10 +93,15 @@ In today's workshop, we will cover:
          
      You can assign these data subsets to new variables or perform calculations directly on these subsets.
      
-     Ex: SiteC = Mammals[3,]
+     Ex: SiteC = Animals[3,]
          sum(SiteC)
          
-     Ex: Lizards = Mamm    
+     Ex: Lizards = Animals[,4]
+         mean(Lizards)
+         
+   If you're working with your dataset as a data frame (more on this in the next workshop), you can also the '$' to access columns
+    Ex: Animals$Squirrels   # Pulls out the squirrels column
+    Ex: range(Aniamsl$Woodrat) # Outputs the min and max number of woodrats at all the sites
  
  
  Random other important notes when beginning R:
