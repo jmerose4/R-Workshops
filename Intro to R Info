@@ -81,6 +81,12 @@ In today's workshop, we will cover:
               in the next screen, search for the file you want to upload -->
               in the final screen, confirm that R is planning to upload your data the way you want it
               
+        Once you've imported your data, there are some nice, quick functions for checking that it looks ok:
+          head(data)  # Shows the first 6 rows (and all the columns) of your data
+          View(data)  # Pulls up the whole dataset in the script window 
+          dim(data)   # Provides the dimensions of your data
+          str(data)   # Provides info about the class of your dataset (more on that later), the dimensions, and each of the columns
+              
   5) How to access your data
      You've now imported data and you want to start using functions/performing calculations on it
      There are tons of functions for subsetting/ manipulating data in R (which we'll cover more next week)
