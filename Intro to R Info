@@ -115,7 +115,7 @@ In today's workshop, we will cover:
  * R is case-sensitive! If you define a variable as "g", calling "G" will not work
  * If you're at the console, you can use the up and down arrow keys to see previously entered code (shouldn't really matter because you've been working in the script window!)
  * To run code from the script window, put cursor on that line and hit command+enter for macs or control+enter for PCs
- * Google is your friend. Almost any issue you've had in R has been experienced and documented by someone else before. 
+ * The internet is a blessing. Almost any issue you've had in R has been experienced and documented by someone else before. 
   These websites are good: stackoverflow, r-bloggers, cran.r-project
               
               
