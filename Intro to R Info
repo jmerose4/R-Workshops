@@ -8,7 +8,6 @@ In today's workshop, we will cover:
 2) How to use R functions
 3) How to install packages
 4) How to import data
-5) How to assign variables
 5) How to access subsets of data
 
 
@@ -68,11 +67,49 @@ In today's workshop, we will cover:
         There are a few different ways to import data:
         
           4.2.1) Manual (command-line) import
-            Uses the "read" functions in R. including "read.csv", and "read.table"
-            Which one you use depends on the format your data is in
-            I recommend using read.csv, but you do you!
-            In this command you should also specificy if the data you're importing has column names or not
-              Ex: read.csv("~/Downloads/SmallMammals.csv", header = TRUE)
+            Uses the "read" functions in R. including "read.csv", and "read.table" (Which one you use depends on the format your data is in)
+            In this command you should specificy if the data you're importing has column names or not using the 'header' argument
+            You can also tell R if there are row names using the row.names argument (default is FALSE)
+            You should also assign the data to a new variable name. 
+              Do this by making up a name (should be something informative) and using either "=" or "<-" to assign data to that newly created variable
+            
+              Ex: Mammals = read.csv("~/Downloads/SmallMammals.csv", header = TRUE, row.names = 1)
+              Ex: Eagles = read.table("~/Downloads/EagleForagingEcology.txt", header = TRUE)
+              
+           4.2.2) Using R-studio tools
+              Go to File --> import dataset --> From text (base) -->
+              in the next screen, search for the file you want to upload -->
+              in the final screen, confirm that R is planning to upload your data the way you want it
+              
+  5) How to access your data
+     You've now imported data and you want to start using functions/performing calculations on it
+     There are tons of functions for subsetting/ manipulating data in R (which we'll cover more next week)
+     Today we will mainly be using the square brackets to access data
+     
+     Ex: Eagles[4,2]    # Tells R to look in the "Eagles" dataframe and pull out the 4th row and 2nd column  
+         Eagles[4,]     # Tells R to look in the Eagles dataframe and pull out the ENTIRE 4th row
+         Eagles[,2]     # Tells R to pull out entire 2nd column
+         Eagles[5, 2:4] # Pull out the 5th row, but just columns 2-4
+         
+     You can assign these data subsets to new variables or perform calculations directly on these subsets.
+     
+     Ex: SiteC = Mammals[3,]
+         sum(SiteC)
+         
+     Ex: Lizards = Mamm    
+ 
+ 
+ Random other important notes when beginning R:
+ 
+ * R is case-sensitive! If you define a variable as "g", calling "G" will not work
+ * If you're at the console, you can use the up and down arrow keys to see previously entered code (shouldn't really matter because you've been working in the script window!)
+ * To run code from the script window, put cursor on that line and hit command+enter for macs or control+enter for PCs
+ * Google is your friend. Almost any issue you've had in R has been experienced and documented by someone else before. 
+  These websites are good: stackoverflow, r-bloggers, cran.r-project
+              
+              
+              
+              
               
               
         
