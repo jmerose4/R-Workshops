@@ -1,0 +1,28 @@
+Welcome to R! 
+
+You are now joining the ~1-2 million users worldwide enjoying the wonders of R. 
+
+In today's workshop, we will cover:
+
+1) The layout/functionality of R Studio
+2) How to use R functions
+3) How to install packages
+4) How to import data
+5) How to assign variables
+5) How to access subsets of data
+
+
+
+1) R Studio Layout: 
+  Console: everything you type here gets executed (or run) 
+  Script window: VERY IMPORTANT. USE THIS AND THIS ONLY THIS TO BUILD CODE
+  Environment & history: Where you can see the variables you've created and past code you've run
+  Plot/Packages/Files tab: Where you can see help info, install packages, and view plots
+  
+  
+2) Functions in R 
+   How you communicate to R what you are trying to make it do
+   Base R has many many functions already! Examples: mean, subset, plot
+   Use functions by typing the name of the function and adding arguments within the parantheses
+   
+   
