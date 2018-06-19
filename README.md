@@ -76,8 +76,8 @@ Section 4:  Importing data
             You should also assign the data to a new variable name. 
               Do this by making up a name (should be something informative) and using either "=" or "<-" to assign data to that newly created variable
             
-   Ex: Animals = read.csv("~/Downloads/CA_Animals.csv", header = TRUE, row.names = 1)
-   Ex: Eagles = read.table("~/Downloads/EagleForagingEcology.txt", header = TRUE)
+  Ex: Animals = read.csv("~/Downloads/CA_Animals.csv", header = TRUE, row.names = 1)
+  Ex: Eagles = read.table("~/Downloads/EagleForagingEcology.txt", header = TRUE)
               
    Using R-studio tools
               Go to File --> import dataset --> From text (base) -->
