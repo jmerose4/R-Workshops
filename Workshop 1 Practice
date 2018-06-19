@@ -1,14 +1,18 @@
 Practice Exercises for Workshop 1
+
 Feel free to copy the code / answer below the question if that's helpful to you
 Or feel free to just these exercises to guide your exploration (no one is grading you!)
 
 1) You want to simulate the outcome of 50 random coin tosses. How could you do this in R?
 
+
 2) You want to compare your data to normally distirbtued data with mean = 0 and sd = 1. 
 How would you sample 100 values from a normal distribution of mean 0 and sd 1?
 Hint: Use the rnorm function. Use ?rnorm for help on how to use it!
 
-3) Download and import the "Anopheles_Counts.csv" data set. Save it as a variable in R called "Anopheles"
+
+3) Download and import the "Anopheles_Data.csv" data set. Save it as a variable in R called "Anopheles"
+There are column names in this dataset (so set header = TRUE)
 This dataset contains information about the number of Anopheles quadrimaculatus (the malaria vector in eastern US) at various sites in Florida
 The "value" column indicates how many mosuqitoes were found in the trap at that day/location.
 
@@ -19,8 +23,92 @@ The "value" column indicates how many mosuqitoes were found in the trap at that 
 CHALLENGE: At which location did this max value of mosquitoes occur?
   Hint: look-up the 'which' function
 
-3.2) Create a new variable called Locations and set it equal to the 5th column (sample_location_info)
+3.2) Create a new variable called Locations and set it equal to the sample_location_info column
 
 3.2.1) How many unique locations were sampled?
+
+3.3)
+Split up the dataset into sites sampled in Northern and Southern Florida using the following commands:
+NorthF = Anopheles[Anopheles$sample_lat_DD >= 27.45672,]
+SouthF = Anopheles[Anopheles$sample_lat_DD < 27.45672,]
+
+3.3.1) Are there more mosquitoes in the Northern or Southern sample sites?
+
+CHALLENGE: Is the difference in mosquitoes statistically significant?
+Hint: Use the t.test function the NorthF$value and SouthF$value
+
+3.4) In addition to calculating summary statistics on the whole dataset or a pre-determined subset, 
+you can also calculate summary stats based on values in other columns. 
+For example, you could calculate the mean mosquito abundance based on the sample site with the following code:
+
+aggregate(Anopheles$value ~ Anopheles$sample_location_info, FUN = mean)
+
+The first argument indicates that we want the "value" column of the Anopheles data frame to be broken up based on the "sample_location_info" column
+The second argument indicates that we want the mean calculated for each of the subsets
+
+Adapt the above code to calculate the average mosquito abundance by sample month.
+Store this information in a new variable "MonthlyMos"
+
+Which months had the highest mosquito abundance? 
+Does this seem consistent with what you know about mosquitoes?
+(Something odd is going on with the dataset. Take a look at the values listed in the sample_month and see if you can figure out what it is.)
+Hint: How many data points were taken in January and February?
+
+
+
+4) Download and import the "bacteria_data.txt" file in R using the read.table command or the import dataset tool
+The dataset contains info about the presence of the bacteria H. influenzae in children with otitis media in Australia
+
+The dataset contains 220 rows and the following columns:
+y: presence or absence: a factor with levels n and y.
+ap: active/placebo: a factor with levels a and p.
+hilo: hi/low compliance: a factor with levels hi amd lo.
+week: week of test.
+ID: subject ID: a factor.
+trt: a factor with levels placebo, drug and drug+, a re-coding of ap and hilo.
+
+Use the 'summary' function on this dataset to get some quick summary stats.
+
+4.1) How many patients were in the placego group? How many in the active group?
+
+4.2) How many unique participants are included in this data set?
+
+4.3) Separate the patients in the active vs placebo group and assign these to new variables using the following command 
+(or don't look below and see if you can adapt the code from 3.3 to do this on your own!)
+
+
+placebo = Bacteria[Bacteria$ap == "p",]
+active = Bacteria[Bacteria$ap == "a",]
+
+4.4) Now use the summary function on these two variables, placebo and active,
+to see how the presence of bacteria (in the "y" column) differed between these two groups.
+
+4.4.1) What percentage of the actively treated patients had bacteria present?
+
+4.4.2) What percentage of the patients in the placebo group had beacteria present?
+
+
+5) Download, import and view the Animals dataset (CA_Animals.csv)
+
+5.1) Use the "colSums" function to figure out which animal is most abundant across all the sites
+
+5.2) How many total animals are at Site E? 
+You can do this first by making the 5th row of the dataset its own variable and calling the sum function on that variable
+Or doing it all in one line (i.e using the sum function on the 5th row without assigning it as a new variable)
+
+5.3) Create a new vector of data called "Chipmunks" that has the values: 2, 4, 2, 0, 5, 1
+
+5.4) Add 'Chipmunks' to the Animals data frame using the following code:
+Animals = cbind(Animals, Chipmunks) 
+
+5.4.1) What would have happened if we had instead wrote: Animals = cbind(Chipmunks, Animals)
+
+5.5)
+
+
+
+
+
+
 
 
