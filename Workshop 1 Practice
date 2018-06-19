@@ -4,11 +4,32 @@ Feel free to copy the code / answer below the question if that's helpful to you
 Or feel free to just these exercises to guide your exploration (no one is grading you!)
 
 1) You want to simulate the outcome of 50 random coin tosses. How could you do this in R?
+Hint: The "sample" function only works for integers so you will need to find a different function.
 
+1.1) You want to simulate the lengths (in centimeters) of arabidopsis stems. 
+You want 20 values ranging from 3.4 to 11.6 (i.e. non-integer values must be possible). 
+How could you do this?
 
-2) You want to compare your data to normally distirbtued data with mean = 0 and sd = 1. 
+2.1) You want to compare your data to normally distirbtued data with mean = 0 and sd = 1. 
 How would you sample 100 values from a normal distribution of mean 0 and sd 1?
 Hint: Use the rnorm function. Use ?rnorm for help on how to use it!
+
+2.2) You have a dataset containing 6 treatment groups and participants 1-10 in each group. 
+Create a vector called "Indices" that contains the values 1:10 repeated 6 times. Hint: use the 'rep' function
+
+2.2.1) If instead of having the values be collated (1,2,3... 1,2,3.... 1,2,3...), 
+you want the values uncollated (1,1,1,1....2,2,2,2....3,3,3,3), how would you do this?
+Hint: Google the "rep" function and explore the possible arguments to pass to it
+
+2.3) You want to create an empty matrix to later add simulated values to.
+Create a matrix called "Empty" that contains 3 rows and 5 columns using the following code:
+Empty = matrix(0, nrow = 3, ncol = 5)
+
+2.4) 
+Challenge: Let's say you obtained the following data from your simulation:
+35,8,1,9,12
+Store this data in a new variable called "Simulated" and replace row 1 of the "Empty" dataset with "Simulated"
+
 
 
 3) Download and import the "Anopheles_Data.csv" data set. Save it as a variable in R called "Anopheles"
@@ -85,7 +106,7 @@ to see how the presence of bacteria (in the "y" column) differed between these t
 
 4.4.1) What percentage of the actively treated patients had bacteria present?
 
-4.4.2) What percentage of the patients in the placebo group had beacteria present?
+4.4.2) What percentage of the patients in the placebo group had bacteria present?
 
 
 5) Download, import and view the Animals dataset (CA_Animals.csv)
@@ -103,11 +124,39 @@ Animals = cbind(Animals, Chipmunks)
 
 5.4.1) What would have happened if we had instead wrote: Animals = cbind(Chipmunks, Animals)
 
-5.5)
+5.5) Adapt the method above to add a new site to the Animals data frame.
+First create a variable "SiteG" and assign it the values 3,5,4,8,0,1,2,1.
+Note you will need to use the rbind function this time instead of cbind
 
+5.5.1) View the animals dataset. What looks different about this row from the rows before it?
 
+5.5.2) Examine the names of the rows for the dataset using the following code:
+rownames(Animals) 
 
+5.5.3) Change the 7th entry in the rownames of Animals to be "SiteG" using the following code:
+rownames(Animals)[7] = "SiteG"
 
+5.4) We later realized the "Pinyon Mouse" was mis-identified and is actually the California mouse.
+Change the column name for column 3 to the correct species.
+
+5.5) For an upcoming analysis, we only want to look at the data for small mammals, so we need to remove the lizard data.
+Remove this column and assign the subsetted data to a new variable:
+
+SmallMammals = Animals[,-4]
+
+5.6) It turns out that sites B & C were affeced by a wildfire and we want to remove these site from our analysis.
+Remove these rows and save the subsetted data into a new data frame called "NoFire"
+
+5.7) Check that you properly removed these rows by examining the dimensions of NoFire using the 'dim' function
+
+5.8) We now want to combine the two mouse species columns for futher analysis. 
+Use the following code to create a new variable "mouse" which contains the sum of the Pinyon mouse & California mouse observations
+
+Mouse = NoFire$DeerMouse + NoFire$CaliforniaMouse
+
+5.9) Remove the DeerMouse and CaliforniaMouse columns. Add in the "Mouse" variable as a column to a new data frame called "SmallMammals2"
+
+5.9.1) Use the 'head' function on SmallMammals2 to make sure you created the new data frame correctly
 
 
 
