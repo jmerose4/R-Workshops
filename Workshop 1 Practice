@@ -1,16 +1,16 @@
 Practice Exercises for Workshop 1
 
-Feel free to copy the code / answer below the question if that's helpful to you
-Or feel free to just these exercises to guide your exploration (no one is grading you!)
+Feel free to write out the code/answers for the questions below if that's helpful to you
+Or feel free to just use these exercises to guide your exploration (no one is grading you!)
 
 1) You want to simulate the outcome of 50 random coin tosses. How could you do this in R?
-Hint: The "sample" function only works for integers so you will need to find a different function.
 
 1.1) You want to simulate the lengths (in centimeters) of arabidopsis stems. 
 You want 20 values ranging from 3.4 to 11.6 (i.e. non-integer values must be possible). 
 How could you do this?
+Hint: The "sample" function only works for integers so you will need to find a different function.
 
-2.1) You want to compare your data to normally distirbtued data with mean = 0 and sd = 1. 
+2.1) You have a dataset that you want to compare to normally distirbtued data with mean = 0 and sd = 1. 
 How would you sample 100 values from a normal distribution of mean 0 and sd 1?
 Hint: Use the rnorm function. Use ?rnorm for help on how to use it!
 
@@ -26,7 +26,7 @@ Create a matrix called "Empty" that contains 3 rows and 5 columns using the foll
 Empty = matrix(0, nrow = 3, ncol = 5)
 
 2.4) 
-Challenge: Let's say you obtained the following data from your simulation:
+Challenge: Let's say you obtained the following data from a simulation:
 35,8,1,9,12
 Store this data in a new variable called "Simulated" and replace row 1 of the "Empty" dataset with "Simulated"
 
@@ -44,9 +44,9 @@ The "value" column indicates how many mosuqitoes were found in the trap at that 
 CHALLENGE: At which location did this max value of mosquitoes occur?
   Hint: look-up the 'which' function
 
-3.2) Create a new variable called Locations and set it equal to the sample_location_info column
+3.2.1) Create a new variable called Locations and set it equal to the sample_location_info column
 
-3.2.1) How many unique locations were sampled?
+3.2.2) How many unique locations were sampled?
 
 3.3)
 Split up the dataset into sites sampled in Northern and Southern Florida using the following commands:
@@ -56,7 +56,7 @@ SouthF = Anopheles[Anopheles$sample_lat_DD < 27.45672,]
 3.3.1) Are there more mosquitoes in the Northern or Southern sample sites?
 
 CHALLENGE: Is the difference in mosquitoes statistically significant?
-Hint: Use the t.test function the NorthF$value and SouthF$value
+Hint: Use the t.test function ont NorthF$value and SouthF$value
 
 3.4) In addition to calculating summary statistics on the whole dataset or a pre-determined subset, 
 you can also calculate summary stats based on values in other columns. 
@@ -96,7 +96,6 @@ Use the 'summary' function on this dataset to get some quick summary stats.
 
 4.3) Separate the patients in the active vs placebo group and assign these to new variables using the following command 
 (or don't look below and see if you can adapt the code from 3.3 to do this on your own!)
-
 
 placebo = Bacteria[Bacteria$ap == "p",]
 active = Bacteria[Bacteria$ap == "a",]
@@ -154,10 +153,16 @@ Use the following code to create a new variable "mouse" which contains the sum o
 
 Mouse = NoFire$DeerMouse + NoFire$CaliforniaMouse
 
+5.8.1) Is there anothe way that you could have done this?
+
 5.9) Remove the DeerMouse and CaliforniaMouse columns. Add in the "Mouse" variable as a column to a new data frame called "SmallMammals2"
 
 5.9.1) Use the 'head' function on SmallMammals2 to make sure you created the new data frame correctly
 
+5.10) How does the variance of mice found at sites compare to the variance of voles?
+
+5.11) Before modeling the Small Mammal data, we want to square root transform all abundance values.
+Create a new variable called "SqSm" that contains the square-root of the values from the SmallMammals2 data frame
 
 
 
