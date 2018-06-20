@@ -1,5 +1,4 @@
-# R_Summer_Course
-
+# R Workshop 1 Notes/Overview
 
 Welcome to R! 
 
