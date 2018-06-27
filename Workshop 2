@@ -1,0 +1,22 @@
+Workshop 2 = Data Manipulation
+
+In workshop 1, we covered:
+-- Using funcions. function(argument1, argument2, etc). Ex = sample(1:2, 10, replace = TRUE)
+-- installing packages. install.packages("package name"). Or do it using the R studio tools. Then "load" package using library(package name)
+-- importing data. Using 'read' fucntions or R Studio tools. Ex: read.csv("data.csv", header = TRUE, row.names = 1)
+-- Subsetting data (where we'll start today)
+
+1) Subsetting data:
+  When you know the row or column that you're working with, 
+  you can access certain rows & colums using either the square brackets [ ] , or the $ (for columns only)
+  In the square brackets, list the rows first & columns second
+  Ex:
+    To extract the third column of the iris data set: iris[ ,3]
+    Leaving the "row" argument blank tells R we want all the rows
+  Ex: Pull out the petal and sepal measurements for the first 10 rows: iris[1:10, 1:4]
+  
+  You can then use functions on these subsets either by saving them as a new variable first, or directly
+  mean(iris[,3])
+  PetalLength = iris[,3]
+  mean(PetalLength)
+  
