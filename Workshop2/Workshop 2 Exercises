@@ -1,7 +1,8 @@
 Workshop 2 Exercises:
 
 1) There is a dataset containing information on UC Berkeley graduate admissions available within base R. 
-View this dataset to get a sense for what it contains. Note that each row is not a student, but an outcome.
+View this dataset to get a sense for what it contains. It is called UCBAdmissions
+Note that each row is not a student, but an outcome.
  1.1) Suggested: Rename the dataset to something shorter (e.g. ucb) so it's easier to work with 
  
  1.2) Convert ucb into a data frame (it's currently in table format which is difficult to work with)
@@ -9,20 +10,21 @@ View this dataset to get a sense for what it contains. Note that each row is not
  1.3) How many total students applied to UCB this year? (involves finding the sum of a particular column)
  
  1.4) Create a new variable "Admit" which contains only the students that were admitted this year. Do the same for those rejected
- Note these new subsetted data frames should be of equal size. Confirm this is true using the "dim" funciton on each
+ Note these new subsetted data frames should be of equal size. Confirm this is true using the "dim" funciton on each new variable
 
 1.5) What proportion of students were admitted this year? (Hint involves again summing a particular column and dividing by a previous answer)
 
 1.6) Looking at just the admitted students, subset the data to have one data frame (or variable) for admitted males and one for admitted females
 
-1.7) Is there any gender bias in these admission (I.e. What proportion of the admitted students were male? What proportion were female?)
+1.7) Is there any gender bias in these admissions data (I.e. What proportion of the admitted students were male? What proportion were female?)
 
 1.8) Clearly there were more admitted males than females this year. 
 Perhaps this has to do with which department individuals are applying to.
 First check the class of the Department column in the ucb dataset. 
 
 1.9) Lets recode the department factors to be more informative using the following code.
-This will first require installing and loading the "plyr" package. Do so either at the command line or using the R Studio tools
+This will first require installing and loading the "plyr" package.
+Do so either at the command line or using the R Studio tools
 
 1.10) Recode the departments using the following code (I made these up, the real departments weren't provided)
 ucb$Dept = revalue(ucb$Dept, c("A"="Education", "B"="Biology", "C" = "History",
@@ -58,9 +60,10 @@ Store this output in a new variable called "PerAdm"
 
 
 2) Download and import the "Microbiomedata" csv. Store this data in a new data frame (variable) called "md"
-Make sure when you import that dataset that you indicate that there are both column names AND row names.
+Make sure when you import the dataset that you indicate that there are both column names AND row names.
 In this dataset, the row names are names of bacteria found in the microbiome (of a tick)
-and the column names are sample identifiers. The values represent the number of sequences attributed to each microbe for that sample
+and the column names are sample identifiers. 
+The values represent the number of sequences attributed to each microbe for that sample
 
 2.1) The sample PW005 was later found to have issues - remove this column and overwrite the original dataset with this change
 
@@ -92,7 +95,7 @@ You'll see why we did this is the next step though.
 Save the output in a new data frame called "Melted"
 
 2.10) We haven't gotten to plotting yet, 
-but lets create a histogram of this dataset to see how the distribution of the "values" using the following code:
+but lets create a histogram of this dataset to see the distribution of the "values" using the following code:
 
 hist(Melted$value)
 
@@ -132,7 +135,7 @@ What does the '!' operator mean?
 Use the ! operator to help you do this
 
 3.8.1) Use the aggregate function from before to calculate the average number grade for this exam based on the students math level
-Store the output in a new variable called Agg1
+Store the output in a new variable called Agg1.
 
 3.8.2) Do the same for the reading level (i.e. calculate avg number grade based on reading level).
 Store this output in a variable called Agg2
@@ -142,7 +145,7 @@ but run the following code to get a sense of how the students number grade relat
 plot(Agg1)
 plot(Agg2)
 
-Does it appear that the students grade is correlated to their reading/math levels?
+Does it appear that the students grade is related to their reading/math levels?
 
 3.9) Challenge: Of the students who studied 3 hours or more, which student scored the lowest (NumGrade) on the exam?
 Note this is probably a multi-step problem.
@@ -153,16 +156,16 @@ second-lowest-scoring with the second-highest-scoring, and so forth towards the 
 How might you manipulate the grades dataset to help you do this? 
 
 3.11) Challenge: Let's say we don't care to look at reading/ math level as separate variables.
-How could you use the "melt" function to 'melt' these two columns into one and retain all the other columns.
+How could you use the "melt" function to 'melt' these two columns into one and retain all the other columns?
 
-3.12) We now got addition information about each student's score on the pre-exam.
-Import the data below (it's already in the correct order) as a new variable called "PreExam"
+3.12) We now have information about each student's score on the pre-exam.
+Enter the data below (it's already in the correct order) as a new variable called "PreExam"
 Make sure you have the duplicated row removed or else these won't match up
 
 72, 74, 50, 79, 90, 88, 80, 70, 82, 90, 95, 90, 60
 
 3.13) Add "PreExam" as the last column of the data. 
-Save this new variable containing the PreExam and all previous data as an object called "grades2)
+Save this new variable containing the PreExam and all previous data as an object called "grades2"
 
 3.14) Re-order grades 2 so that the PreExam scores come right after the NumGrade column using the code below:
 grades2 = cbind(grades, PreExam)
